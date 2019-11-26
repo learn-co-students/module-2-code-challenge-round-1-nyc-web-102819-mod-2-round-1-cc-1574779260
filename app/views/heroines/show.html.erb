@@ -3,3 +3,5 @@
 <h3>Name: <%= @heroine.name %></h3>
 <h3>Super Name: <%= @heroine.super_name %></h3>
 <h3>Power: <%= link_to @powers.find(@heroine.power_id).name, power_path(@heroine.power_id) %></h3>
+
+<%= link_to "Back to Heroines Pages", heroines_path %>

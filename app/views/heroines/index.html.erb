@@ -1,5 +1,12 @@
-<h2>All Heroines</h2>
+<h1>All Heroines</h1>
+<h4> <%= link_to "Add a Heroine", new_heroine_path %> </h4>
+<h4> <%= link_to "See All Powers", powers_path %></h4>
+
+<br>
 
 <% @heroines.each do |heroine| %>
-  <%= link_to "#{heroine.name}", heroine_path(heroine) %><br>
+  <h3><%= link_to "#{heroine.name}", heroine_path(heroine) %></h3>
+  <%= link_to "Edit", edit_heroine_path(heroine) %>
+  <%= button_to "Delete", { action: "delete", id: heroine.id }, method: :delete %>
+  <br>
 <% end %>

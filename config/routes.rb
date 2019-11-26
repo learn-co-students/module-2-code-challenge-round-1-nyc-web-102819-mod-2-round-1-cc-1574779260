@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/heroines/new', to: 'heroines#new', as: 'new_heroine'
   post '/heroines', to: 'heroines#create'
   get '/heroines/:id', to: 'heroines#show', as: 'heroine'
+  get '/search', to: 'search#search', as: 'search'
 
   get '/powers/:id', to: 'powers#show', as: 'power'
 end

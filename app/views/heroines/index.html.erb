@@ -1,7 +1,14 @@
 <h2>All Heroines</h2>
 <%= link_to "Create New Heroine", new_heroine_path %>
 <hr>
-
+<br>
+<%= form_tag(heroines_path, method: :get) do %>
+  <%= label_tag(:q, "Search By Superpower:") %><br>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br>
+<h3>List of Heroines:</h3>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>

@@ -2,12 +2,10 @@
 
 
 <% if @error == true %>
-<% @heroine.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<h1><%= @heroine.errors.full_messages %></h1>
 <br>
-  
-    <% end %>
 <% end %>
+
 
 <%= form_for @heroine do |h| %>
   <%= h.label :name %>:

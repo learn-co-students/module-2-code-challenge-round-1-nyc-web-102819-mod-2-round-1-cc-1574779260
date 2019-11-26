@@ -7,6 +7,10 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new
   end
 
+  def show
+    @heroine = Heroine.find(params[:id])
+  end
+
   def create
      @heroine = Heroine.new(strong_params)
      @error = false
@@ -16,6 +20,8 @@ class HeroinesController < ApplicationController
      else
     @error = true
     redirect_to new_heroines_path
+    # byebug
+    # dang this one stumped me :(
      end
   end
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # resources :powers, only: [:index]
-  # resources :heroines, only: [:index]  <- WHY DID YOU THROW THIS CURVEBALL :(
+  # resources :heroines, only: [:index]  <- WHY DID YOU THROW THIS CURVEBALL :
 
 #heroines
 
@@ -12,8 +12,10 @@ Rails.application.routes.draw do
 # 7. Make sure no two heroines have the same super name.
 
 get	'/heroines', to:	'heroines#index', as: 'heroines' 
+
 get	'/heroines/new',	 to: 'heroines#new', as: 'new_heroines'	
 post	'/heroines',	to: 'heroines#create'	
+get	'/heroines/:id', to: 'heroines#show', as: 'heroine'
 
 #powers
 

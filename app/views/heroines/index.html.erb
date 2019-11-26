@@ -9,4 +9,8 @@
   <% end %>
 </ul>
 
-<%= button_to "Make a New Heroine", new_heroine_path, method: :get %>
+<%= button_to "Make a New Heroine", new_heroine_path, method: :get %><br>
+<%= form_tag search_path, method: :get do %>
+    <%= text_field_tag :power_name %>
+    <%= submit_tag "Search" %>
+<% end %>

@@ -1,6 +1,7 @@
 class HeroinesController < ApplicationController
   def index
     @heroines = Heroine.all
+    @power = Power.new
   end
 
   def show
@@ -20,6 +21,16 @@ class HeroinesController < ApplicationController
     else 
       flash[:errors] = heroine.errors.full_messages
       redirect_to new_heroine_path
+    end
+  end
+
+  def search
+    @my_power = params[:power_name]
+    selected_power = Power.find_by_name(params[:power_name])
+    if selected_power
+      @show_power = selected_power
+    else
+      @show_power = Power.new
     end
   end
 

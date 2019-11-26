@@ -1,0 +1,5 @@
+<h1> Here are the heroes with <%= @my_power %></h1>
+<% @show_power.heroines.each do |heroine| %>
+<%= link_to heroine.name, heroine_path(heroine.id) %><br>
+<% end %><br>
+<%= link_to "Back to all heroines", heroines_path %>

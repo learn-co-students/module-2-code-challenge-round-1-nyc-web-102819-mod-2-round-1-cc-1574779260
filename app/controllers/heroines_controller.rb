@@ -7,9 +7,20 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new
   end
 
-  def create
-    heroine = Heroine.create(heroine_params)
-    redirect_to heroine_path(heroine)
+  # def create
+  #   heroine = Heroine.create(heroine_params)
+  #   redirect_to heroine_path(heroine)
+  # end
+
+  def create 
+    heroine = Heroine.new(heroine_params)
+    
+    if heroine.save
+      redirect_to heroine_path(heroine)
+    else
+      flash[:error] = heroine.errors.full_messages
+      redirect_to new_heroine_path
+    end
   end
 
   def show
